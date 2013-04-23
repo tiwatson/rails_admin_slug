@@ -14,7 +14,7 @@ Simply add the gem to your projects Gemfile after the rails_admin line.
 
     gem "rails_admin_slug"
 
-Create a rails_admin/custom/ui.js file and add the following line to the top (or just add if the file already exists):
+Create an app/assets/javascripts/rails_admin/custom/ui.js file and add the following line to the top (or just add if the file already exists):
 
     //=require 'ra.slug'
 
@@ -22,6 +22,7 @@ Create a rails_admin/custom/ui.js file and add the following line to the top (or
 
 In your RailsAdmin configuration file (usually config/initializers/rails_admin.rb) override the field type for the slug field.
 The "source" configuration option defines which field the slug will be tied to and is required to be set.
+(On the field line, the first :slug is your slug field, the second in the field type, overriding string in this case.)
 
     RailsAdmin.config do |config|
       config.model 'Page' do
@@ -48,5 +49,5 @@ The slug field type extends the string field type. This means it is still possib
 
 ## Credits
 
-The jquery plugin that creates and edit the client side slug is from Patrick McElhaney and can be found at: https://github.com/pmcelhaney/jQuery-Slugify-Plugin/blob/master/readme.md
+The jquery plugin that creates and edit the client side slug is from Patrick McElhaney and can be found at: https://github.com/pmcelhaney/jQuery-Slugify-Plugin
 
